@@ -297,6 +297,10 @@ ion-icon {
     }
     .intro {
         width: 50%;
+        margin: 3em auto;
+    }
+    header {
+        background-image: url('../images/bg-curvy-desktop.svg');
     }
     .features-container {
         display: grid;
