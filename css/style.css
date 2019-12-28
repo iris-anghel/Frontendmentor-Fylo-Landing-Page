@@ -14,27 +14,12 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6, 
+.nav,
+.btn {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
 }
-
-/* - Weights: 400, 700 */
-
-/* ### Primary
-
-- Dark Blue (intro and email sign up background): hsl(217, 28%, 15%) #1C2431
-
-### Accent
-
-- Cyan (inside call-to-action gradient): hsl(176, 68%, 64%) #65E2D9
-- Blue (inside call-to-action gradient): hsl(198, 60%, 50%) #339ECC
-
-### Headings, Call-to-actions, Header Navigation
-
-- Family: [Raleway](https://fonts.google.com/specimen/Raleway)
-- Weights: 400, 700 */
-
 
 /* img {
     width: 100%;
@@ -56,18 +41,29 @@ a:hover {
 
 /* buttons */
 .btn {
-    /* background-color: #339ECC; */
+    border: none;
     background-image: linear-gradient(to right, #65e2d9, #49d2da, #33c1d8, #2bb0d4, #339ecc);
-    /* aici tre gradient */
     color: #FFF;
     border-radius: 25px;
-    padding: 15px 80px;
+    padding: 1em 2em;
+    margin: 1em;
+}
+
+.intro-button {
+    padding: 1em 5em;
+}
+
+.btn:hover {
+    cursor: pointer;
 }
 
 /* header */
 header {
     background-color: #1C2431;
     padding: 1.5em;
+    background-image: url('../images/bg-curvy-mobile.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 
 .nav {
@@ -97,54 +93,76 @@ ul {
     list-style: none;
 }
 
-
-
+/* main */
 main {
     background-color: #181F2A;
+    padding: 2em;
+}
+
+.illustration {
+    width: 100%;
 }
 
 .intro {
-    width: 50%;
-    /* doar la desktop width*/
-    margin: 5em auto;
     text-align: center;
-    background: url('./images/bg-curvy-desktop.svg') no-repeat cover center;
+    padding-top: 3em;
 }
 
 .features-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2em;
-    align-items: center;
-    width: 70%;
-    /* doar la desktop */
     margin: auto;
     text-align: center;
+    padding-bottom: 3em;
 }
 
-.feature img {
-    height: 30%;
+.feature {
+    margin: 4em 2em;
 }
 
-.cta-feature {
-    display: flex;
+.product-feature {
+    margin: 2em auto 10em;
 }
 
+.product-img {
+    flex-basis: 60%;
+}
 
+.product-text {
+    flex-basis: 40%;
+    padding-left: 2em;
+}
+
+.product-text h1 {
+    font-size: 2em;
+}
+
+.product-link {
+    color: #65e2d9;
+    border-bottom: 1px solid #65e2d9;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+
+/* testimonials */
 .testimonials {
-    background-color: #202A3C;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    background-image: url(../images/bg-quotes.png);
+    background-repeat: no-repeat;
+    padding-top: 1.5em;
 }
 
 .testimonial__card {
-    flex-basis: 30%;
+    background-color: #202A3C;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 1em;
 }
 
 .testimonial__profile {
     display: flex;
     align-items: center;
+}
+
+.testimonial__client {
+    margin-left: 1em;
 }
 
 .profile-image {
@@ -153,15 +171,184 @@ main {
     border-radius: 50%;
 }
 
+.testimonial__client-name {
+    font-weight: 700;
+    margin-bottom: 0;
+}
 
+.testimonial__client-job {
+    font-size: 0.75em;
+}
+
+/* cta subscribe */
+.cta-subscribe {
+    background-color: hsl(217, 28%, 15%);
+    width: 95%;
+    margin: auto;
+    padding: 2em;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    top: 14em;
+}
+
+.cta-subscribe-email {
+    width: 90%;
+    border: none;
+    border-radius: 25px;
+    padding: 1em 2em;
+    margin: 1em;
+}
+
+.cta-subscribe-button {
+    width: 90%;
+}
+
+/* footer */
 footer {
     background-color: #0B1523;
+    padding: 16em 2em 1em 2em;
+}
+
+.footer-fylo-wrapper > div {
+    margin: 1em;
+}
+
+.footer-logo {
+    margin-bottom: 3em;
+}
+
+.footer-fylo-location {
+    display: flex;
+}
+
+.contact-detail {
+    display: flex;
+}
+
+.contact-icon {
+    width: 20px;
+    margin-right: 1em;
+}
+
+.footer-fylo-menu ul {
+    padding: 0.5em 0 0 1em;
+    margin: 2em 0;
+}
+
+.footer-fylo-menu ul > li {
+    margin-bottom: 1em;
+}
+
+.footer-fylo-social {
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+ion-icon {
+    font-size: 24px;
+    margin: 0 5px;
 }
 
 .attribution {
-    font-size: 11px; text-align: center;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 5em;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+/* media queries */
+
+/* tablet */
+@media screen and (min-width: 376px) and (max-width: 768px) {
+    header {
+        background-image: url('../images/bg-curvy-desktop.svg');
+    }
+    .intro {
+        width: 70%;
+        margin: 3em auto;
+    }
+    .features-container {
+        width: 70%;
+    }
+    .cta-subscribe {
+        width: 90%;
+    }
+    .footer-fylo-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer-fylo-location {
+        flex-basis: 60%;
+    }
+    .footer-fylo-social {
+        flex-basis: 100%;
+    }
+}
+
+/* desktop */
+@media screen and (min-width: 769px) {
+    .nav__navbar {
+        font-size: 1.5em;
+    }
+    .intro {
+        width: 50%;
+    }
+    .features-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5em;
+        align-items: center;
+    }
+    .product-feature {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .product-text {
+        display: flex;
+        flex-direction: column;
+        align-self: center; 
+    }
+    .product-link {
+        width: fit-content;
+    }
+    .testimonials {
+        display: flex;
+        justify-content: space-between;
+    }
+    .testimonial__card {
+        flex-basis: 33%;
+    }
+    .cta-subscribe {
+        width: 60%;
+    }
+    .cta-subscribe-text {
+        width: 80%;
+        margin: 2em auto;
+    }
+    .cta-subscribe-form {
+        display: flex;
+    }
+    .cta-subscribe-email {
+        flex-basis: 70%;
+    }
+    .cta-subscribe-button {
+        flex-basis: 30%;
+    }
+    .footer-fylo-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    }
+    .footer-fylo-menu ul {
+        padding-left: 1em;
+        margin: 0;
+    }
+}
+
+
+
+
